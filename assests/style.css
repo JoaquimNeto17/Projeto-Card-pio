@@ -1,0 +1,178 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #E1DACA;
+    font-family: 'Bebas Neue';
+}
+
+header {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/*-----------LOGO----------*/
+
+.logo{
+    height: 80px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 80px;
+    margin-right: 20px;
+}
+
+.logo h1{
+    font-family: 'Bebas Neue';
+    font-size: 18px;
+    color: #E1DACA;
+}
+
+/*------------MENU-------------*/
+
+.menu{
+    width: 700px;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu ul li a {
+    padding: 10px 30px;
+    color: aliceblue;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #FFD700;
+}
+
+
+/*--------HOME--------*/
+
+.linha_home{
+    background-color: #E1DACA;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.linha_home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(70%)
+}
+
+.container{
+    border: 1px solid black;
+    width: 1200px;
+    height: 100%;
+    padding-top: 110px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+.linha{
+    width: 100%;
+    height: 100vh;
+    background-color: #E1DACA;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+/*---------FOOTER---------*/
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid white;
+}
+
+.col_rodape{
+    width: 400px;
+    height: 100%;
+   
+}
+
+.col_adress{
+    width: 400px;
+    height: 100%;
+    
+}
+
+.col_number{
+    width: 400px;
+    height: 100%;
+    
+}
