@@ -1,13 +1,12 @@
+
 :root {
-  --color-background: #E1DACA;
-  --color-header-footer: #000;
-  --color-header-text: #E1DACA;
-  --color-menu-text: aliceblue;
-  --color-menu-hover: #FFD700;
-  --color-card-background: #fff;
-  --color-card-text: #555;
-  --color-footer-border: #444;
-  --color-footer-text: #ccc;
+  --cor-principal: #E1DACA;
+  --cor-secundaria: #3C1518;
+  --cor-card: #BE6E46;
+  --cor-destaque: #F5A623;
+  --detalhes: #4C302A;
+  --cor-do-texto: #fff;
+  --texto-produto:'Bebas'
 }
 
 * {
@@ -19,22 +18,26 @@
   list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: var(--color-background);
+  background-color: var(--cor-principal);
   font-family: 'Bebas Neue';
 }
 
 header {
   width: 100%;
-  background-color: var(--color-header-footer);
+  background-color: var(--cor-secundaria);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 5%;
-  color: var(--color-menu-text);
+  color: var(--cor-principal);
   position: fixed;
   top: 0;
   left: 0;
@@ -58,7 +61,7 @@ header {
 .logo h1 {
   font-family: 'Bebas Neue';
   font-size: 18px;
-  color: var(--color-header-text);
+  color: var(--cor-principal);
 }
 
 /*------------MENU-------------*/
@@ -72,13 +75,31 @@ header {
 }
 
 .menu ul li a {
+  position: relative;
   padding: 10px 30px;
-  color: var(--color-menu-text);
-  transition: color 0.3s;
+  color: var(--cor-principal);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: 5px;
+  background-color: var(--cor-destaque);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .menu ul li a:hover {
-  color: var(--color-menu-hover);
+  color: var(--cor-destaque);
+  transform: scale(1.1);
+}
+
+.menu ul li a:hover::after {
+  width: 80%;
 }
 
 /*--------HOME--------*/
@@ -115,6 +136,7 @@ header {
 }
 
 .cards {
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
@@ -124,23 +146,29 @@ header {
   padding: 0 10px;
 }
 
-.card {
-  background-color: var(--color-card-background);
+.card { 
+  min-width: 340px;
+  max-width: 340px;
+  min-height: 250px;
+  max-height: 250px;
+  background-color: var(--cor-card);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 20px;
+  padding: 8px;
   text-align: center;
   transition: transform 0.3s;
   max-width: 250px;
   justify-self: center;
+  border: 2px solid var(--detalhes);
 }
 
 .card:hover {
   transform: scale(1.05);
+  border-color: var(--cor-destaque);
 }
 
 .card img {
-  width: 100%;
+  width: 230px;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
@@ -149,32 +177,37 @@ header {
 .card h3 {
   margin-top: 15px;
   font-size: 1.2em;
+  color: var(--cor-do-texto);
 }
 
 .card p {
   font-size: 0.9em;
-  color: var(--color-card-text);
+  color: var(--cor-do-texto);
 }
 
 .linha {
   width: 100%;
   height: 100vh;
-  background-color: var(--color-background);
+  background-color: var(--cor-principal);
   display: flex;
   justify-content: center;
+}
+
+.linha_nome{
+    margin-top: 100px;
 }
 
 /*---------FOOTER---------*/
 
 footer {
   width: 100%;
-  background-color: var(--color-header-footer);
+  background-color: var(--cor-secundaria);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--color-footer-text);
+  color: var(--cor-principal);
   padding: 20px 80px;
-  border-top: 2px solid var(--color-footer-border);
+  border-top: 2px solid var(--detalhes);
   flex-wrap: wrap;
 }
 
@@ -196,10 +229,11 @@ footer img {
 footer h2 {
   margin-bottom: 5px;
   font-size: 20px;
-  color: var(--color-header-text);
+  color: var(--cor-principal);
 }
 
 footer p {
   margin: 0;
   font-size: 16px;
+  color: var(--cor-principal);
 }
